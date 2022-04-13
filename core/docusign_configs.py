@@ -24,12 +24,14 @@ CLIENT_USER_ID = settings.CLIENT_USER_ID
 ACCOUNT_ID = settings.ACCOUNT_ID
 
 def create_jwt_grant_token():
-    print('--------------------------------1')
+    print('*****begin create_jwt_grant_token*****')
+    print('--------------------------------')
     token = docusign_token()
     print('token')
     print(token)
     print('--------------------------------')
     logger.info('TOKEN', token)
+    print('*****end create_jwt_grant_token*****')
     return token
 
 def signature_by_email(token, base64_file_content, signer_name, signer_email):

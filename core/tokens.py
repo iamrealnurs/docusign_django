@@ -20,7 +20,6 @@ def docusign_token():
   }
   with open('private_key.pem', "rb") as key_file:
     private_key = crypto_serialization.load_pem_private_key(key_file.read(), password=None)
-    pdb.set_trace()
   key = private_key.private_bytes(crypto_serialization.Encoding.PEM, crypto_serialization.PrivateFormat.PKCS8, crypto_serialization.NoEncryption())
   jwt_token = jws.sign(payload, key, algorithm='RS256')
   return jwt_token
